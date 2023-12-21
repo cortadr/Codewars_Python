@@ -1,0 +1,24 @@
+********* PROBLEM **********
+
+Task:
+Your job is to write a function, which takes three integers a, b, and c as arguments, and returns True if exactly two of of the three integers are positive numbers (greater than zero), and False - otherwise.
+
+Examples:
+two_are_positive(2, 4, -3) == True
+two_are_positive(-4, 6, 8) == True
+two_are_positive(4, -6, 9) == True
+two_are_positive(-4, 6, 0) == False
+two_are_positive(4, 6, 10) == False
+two_are_positive(-14, -3, -4) == False
+
+********** SOLUTION **********
+
+def two_are_positive(a, b, c):
+    count = 0
+    if a > 0:
+        count += 1
+    if b > 0:
+        count += 1
+    if c > 0:
+        count += 1
+    return True if count == 2 else False
