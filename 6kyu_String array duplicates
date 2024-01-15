@@ -1,0 +1,29 @@
+********* PROBLEM **********
+
+In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+
+For example:
+
+dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
+
+dup(["kelless","keenness"]) = ["keles","kenes"].
+
+Strings will be lowercase only, no spaces. See test cases for more examples.
+
+Good luck!
+
+********* SOLUTION **********
+
+def dup(arry):
+    result = []
+    
+    for word in arry:
+        new_string = ""
+        prev_letter = ""
+        for letter in word:
+            if letter != prev_letter:
+                new_string += letter
+                prev_letter = letter
+        
+        result.append(new_string)
+    return result
