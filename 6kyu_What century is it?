@@ -1,0 +1,30 @@
+********* PROBLEM **********
+
+Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
+
+Examples
+"1999" --> "20th"
+"2011" --> "21st"
+"2154" --> "22nd"
+"2259" --> "23rd"
+"1124" --> "12th"
+"2000" --> "20th"
+
+********* SOLUTION **********
+
+import math
+def what_century(year):
+    x = int(year) / 100
+    y = math.ceil(x)
+    
+    if int(y) == y:  # Check if y is an integer
+        if y % 10 == 1 and y % 100 != 11:
+            return f'{y}st'
+        elif y % 10 == 2 and y % 100 != 12:
+            return f'{y}nd'
+        elif y % 10 == 3 and y % 100 != 13:
+            return f'{y}rd'
+        else:
+            return f'{y}th'
+    else:
+        return f'{y}th'
