@@ -1,0 +1,20 @@
+********* PROBLEM **********
+
+Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+Examples:
+
+* 'abc' =>  ['ab', 'c_']
+* 'abcdef' => ['ab', 'cd', 'ef']
+
+********* SOLUTION **********
+
+def solution(s):
+    result = []
+    
+    for letter in range(0, len(s), 2):
+        pair = s[letter:letter+2]
+        if len(pair) == 1:
+            pair += '_'
+        result.append(pair)
+    return result
